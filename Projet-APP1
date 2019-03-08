@@ -159,7 +159,7 @@ elif load== "load crypteSeq":
     f=open("message_decrypté_4.txt")
     liste = f.readlines()
     f.close()
-    
+    liste="".join(liste)
     liste=list(liste)
 
     liste_f=liste_finale(liste)
@@ -171,6 +171,8 @@ elif load== "load crypteSeq":
     f=open("message_secret_5.txt")
     liste = f.readlines()
     f.close()
+    liste="".join(liste)
+    liste=list(liste)
     
     liste_f=retour(liste)
 
@@ -179,7 +181,7 @@ elif load== "load crypteSeq":
     f=open("Nothwoods.txt")
     liste = f.readlines()
     f.close()
-        
+    liste="".join(liste)
     liste=list(liste)
 
     liste_f=retour(liste)
