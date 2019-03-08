@@ -5,6 +5,8 @@ from lib.Network import *
 # Affiche les échanges avec le serveur (false pour désactiver)
 debug_mode (True)
 
+#Hello c'est moi :)
+
 def decale (liste, decalage):
     
     """fait un décalage de César d'un message dont la liste de caractères est pris en arguments, et le decalage à effectuer aussi."""
