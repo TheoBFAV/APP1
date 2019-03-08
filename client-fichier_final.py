@@ -33,11 +33,7 @@ def decale (liste, decalage):
         if ord(lettre)<ord("A") or ord(lettre)>ord("z") or (ord(lettre)>ord("Z") and ord(lettre)<ord("a")):
 
             lettreSuivante=lettre
-
-        if decalage>7 and ord(lettre)>ord("Z")-decalage and ord(lettre)<=ord("Z"):
-
-            lettreSuivante=chr(ord(lettreSuivante)-26)
-
+            
         message_decrypte=message_decrypte+lettreSuivante
 
     return message_decrypte
@@ -124,9 +120,9 @@ while True:
         attendre_message()
         reponse=envoyerRecevoir("depart")
         reponse=envoyerRecevoir("aide")
-        lettre=list(reponse)
-        print(lettre)
-        d=ord(lettre[0])-ord("C")
+        lettre=list(reponse.lower())
+        
+        d=ord(lettre[0])-ord("c")
 
         decryptage=decale(lettre, d)
         print(decryptage)
