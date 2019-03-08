@@ -108,7 +108,7 @@ elif load == "load planB":
         msg_crypte=""
         if decalage >0 :
             for i in message:
-                if ord(i)<ord("A") or ord(i)>ord("z") or(ord(i)>ord("Z") and ord(i)<ord("a"):
+                if ord(i)<ord("A") or ord(i)>ord("z") or(ord(i)>ord("Z") and ord(i)<ord("a")):
                     lettre=i #pour les caractères qui ne sont pas des lettres
                 elif ord(i)>=ord("a") and ord(i)<= ord("z"): #pour les minuscules
                     ord_crypte=ord(i)-decalage
@@ -123,7 +123,7 @@ elif load == "load planB":
                 msg_crypte=msg_crypte+lettre
         else :  #même chose avec un décalage dans l'autre sens
             for i in message:
-                if ord(i)<ord("A") or ord(i)>ord("z") or(ord(i)>ord("Z") and ord(i)<ord("a"):
+                if ord(i)<ord("A") or ord(i)>ord("z") or(ord(i)>ord("Z") and ord(i)<ord("a")):
                     lettre=i
                 elif ord(i)>=ord("a") and ord(i)<= ord("z"):
                     ord_crypte=ord(i)-decalage
