@@ -117,7 +117,7 @@ elif load == "load planB":
                     lettre = chr(ord_crypte)
                 else :  #et les majuscules
                     ord_crypte=ord(i)-decalage
-                    if ord_<ord("A"):
+                    if ord_crypte<ord("A"):
                         ord_crypte=ord_crypte+26 #pour revenir à "Z" avant "A"
                     lettre = chr(ord_crypte)
                 msg_crypte=msg_crypte+lettre
