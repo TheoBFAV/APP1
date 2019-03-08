@@ -1,0 +1,72 @@
+Chere Alice,
+
+Tu as raison, il faut anticiper avant que nous ne soyons reperes. J'ai termine 
+dans l'urgence mon nouveau schema de chiffrement. En voici le principe :
+- durant l'encryptage, je maintiens une sequence de tous les caracteres deja 
+  rencontres, dans l'ordre
+- pour chaque caractere c a crypter, je cherche dans la sequence s'il a deja 
+  ete rencontre
+  - si c'est la premiere fois, je l'ajoute en fin de sequence et je le laisse 
+    inchange dans le message crypte
+  - sinon, je considere d qui est soit:
+    - le caractere qui precede c dans la sequence
+    - le dernier caractere de la sequence si c est le premier caractere de la 
+      sequence
+    je remplace c par d dans le message crypte et je deplace c a la fin de la 
+    sequence
+
+Je sais que tu es l'une des rares personne a pouvoir mettre en oeuvre une 
+technique complexe comme celle-ci, cela devrait nous proteger un peu plus 
+encore. Cependant, pour me montrer que tu as bien compris ma methode, il faut 
+dans un premier temps que tu me renvoies ce message crypte comme je viens de 
+te l'expliquer. Je t'enverrai alors mon prochain message. Mets ton message 
+dans l'exercice 'crypteSeq' (le mot de passe est hasta la victoria siempre).
+
+Bien a toi,
+Bob.
+
+PS: (optionnel) pour valider cet exercice sur AppoLab, il suffit de donner le 
+mot de passe de crypteSeq (cf ci-dessus) decale a l'oppose comme pour le 
+message precedent.
+
+PPS: Pour t'aider, le debut de ce message serait transforme en :
+
+> Cherh Alicr,
+> ,TurasuhuluoneuaA,frTtlfou,AtpATuuv uurqfptasqTeeqsuqysu...
+
+Et voici un exemple d'encryption sur le texte 'abcbcca'
+
+Input: abcbcca
+
+Seq:    <vide>
+Output: <vide>
+
+Char: a
+Seq:    a
+Output: a
+
+Char: b
+Seq:    ab
+Output: ab
+
+Char: c
+Seq:    abc
+Output: abc
+
+Char: b
+Seq:    acb
+Output: abca
+
+Char: c
+Seq:    abc
+Output: abcaa
+
+Char: c
+Seq:    abc
+Output: abcaab
+
+Char: a
+Seq:    bca
+Output: abcaabc
+
+Output final: abcaabc
