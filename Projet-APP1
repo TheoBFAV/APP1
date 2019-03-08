@@ -39,6 +39,8 @@ def decale (liste, decalage):
     return message_decrypte
 
 def liste_finale(liste):
+    
+    """renvoie la liste finale des caractères, codés selon la séquence"""
 
     liste_finale=[]
 
@@ -67,6 +69,8 @@ def liste_finale(liste):
     return liste_finale
 
 def retour(liste):
+    
+    """renvoie la liste de caractères décodés et auxquels on avait appliqué le cryptage séquenciel"""
     
     sequence=[]
     
