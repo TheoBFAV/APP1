@@ -108,32 +108,32 @@ elif load == "load planB":
         msg_crypte=""
         if decalage >0 :
             for i in message:
-                if ord(i)<65 or ord(i)>122 or(ord(i)>90 and ord(i)<97):
+                if ord(i)<ord("A") or ord(i)>ord("z") or(ord(i)>ord("Z") and ord(i)<ord("a"):
                     lettre=i #pour les caractères qui ne sont pas des lettres
-                elif ord(i)>=97 and ord(i)<= 122: #pour les minuscules
+                elif ord(i)>=ord("a") and ord(i)<= ord("z"): #pour les minuscules
                     ord_crypte=ord(i)-decalage
-                    if ord_crypte<97:
-                        ord_crypte=ord_crypte-96+122 #pour revenir à "z" avant "a"
+                    if ord_crypte<ord("a"):
+                        ord_crypte=ord_crypte+26 #pour revenir à "z" avant "a"
                     lettre = chr(ord_crypte)
                 else :  #et les majuscules
                     ord_crypte=ord(i)-decalage
-                    if ord_<65:
-                        ord_crypte=ord_crypte-64+90 #pour revenir à "Z" avant "A"
+                    if ord_<ord("A"):
+                        ord_crypte=ord_crypte+26 #pour revenir à "Z" avant "A"
                     lettre = chr(ord_crypte)
                 msg_crypte=msg_crypte+lettre
         else :  #même chose avec un décalage dans l'autre sens
             for i in message:
-                if ord(i)<65 or ord(i)>122 or(ord(i)>90 and ord(i)<97):
+                if ord(i)<ord("A") or ord(i)>ord("z") or(ord(i)>ord("Z") and ord(i)<ord("a"):
                     lettre=i
-                elif ord(i)>=97 and ord(i)<= 122:
+                elif ord(i)>=ord("a") and ord(i)<= ord("z"):
                     ord_crypte=ord(i)-decalage
-                    if ord_crypte>122:  
-                        ord_crypte=ord_crypte+96-122 #pour revenir à "a" après "z"
+                    if ord_crypte>ord("z"):  
+                        ord_crypte=ord_crypte-26 #pour revenir à "a" après "z"
                     lettre = chr(ord_crypte)
                 else :
                     ord_crypte=ord(i)-decalage
-                    if ord_crypte>90:
-                        ord_crypte=ord_crypte+64-90 #pour revenir à "A" après "Z"
+                    if ord_crypte>ord("Z"):
+                        ord_crypte=ord_crypte-26 #pour revenir à "A" après "Z"
                     lettre = chr(ord_crypte)
                 msg_crypte=msg_crypte + lettre
         return msg_crypte
