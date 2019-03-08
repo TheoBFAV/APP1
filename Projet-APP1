@@ -96,6 +96,16 @@ def retour(liste):
                 sequence.append(sequence.pop(i+1))
 
     return retour
+
+print ("Bienvenue dans le client tutoriel d'AppoLab !")
+
+# En cas de problème, essayer sur le port 443 en utilisant à la place la ligne 
+# ci-dessous
+# connexion ("im2ag-sncf.u-ga.fr", 443)
+connexion ()
+
+# modifiez la ligne ci-dessous en mettant vos identifiant et mot de passe.
+reponse = envoyerRecevoir("login DALaborie 2600")
     
 while True :
     attendre_message()
