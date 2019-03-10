@@ -52,8 +52,8 @@ def trouveCasse(carac) :
         return "min"
 
 def trouveLettre(carac, decalage, casse="min") :
-	""" Trouve le caractere demande avec le decalage demande et la casse eventuelle
-		dans l'alphabet et le retourne""" # Ameliorable je pense
+    """ Trouve le caractere demande avec le decalage demande et la casse eventuelle
+	dans l'alphabet et le retourne """
 
     # ALPHABET ##############################
     liste = []
@@ -82,7 +82,7 @@ def trouveLettre(carac, decalage, casse="min") :
         return neo_carac.lower()
 
 def epureServeur(chaine, suppr) :
-	""" Supprime la chaine 'suppr' du début de la chaine 'chaine' 
+    """ Supprime la chaine 'suppr' du début de la chaine 'chaine' 
 		Retourne la chaine """
     enleve = suppr
     pure = chaine.lstrip(enleve)
@@ -225,6 +225,7 @@ def runPlanB():
     reponse = envoyerRecevoir("start")
     reponse = envoyerRecevoir(traduitLigne("hasta la revolucion", decalage))
     texte = epureServeur(reponse, "Bonne réponse !")
+    texte = epureServeur(texte, "\n")
     decalage = caesar(texte)
     print(traduitLigne(reponse, decalage))
     reponse = envoyerRecevoir(traduitLigne("hasta la victoria siempre", decalage))
