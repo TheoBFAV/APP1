@@ -130,13 +130,13 @@ def trouveLettre(carac, decalage, casse="min") :
 
         if carac.lower() == c :
 
-            if ord(c) + decalage >= len(alphabet) :
+            if alphabet.index(c) + decalage >= len(alphabet) :
 
-                 neo_carac = alphabet[(ord(c) + decalage) - len(alphabet)]
+                 neo_carac = alphabet[(alphabet.index(c) + decalage) - len(alphabet)]
 
             else :
 
-                 neo_carac = alphabet[i + decalage]
+                 neo_carac = alphabet[alphabet.index(c) + decalage]
 
 
 
@@ -146,7 +146,7 @@ def trouveLettre(carac, decalage, casse="min") :
 
     else :
 
-        return neo_carac.lower()
+        return neo_carac
 
 
 
