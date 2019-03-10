@@ -52,6 +52,8 @@ def trouveCasse(carac) :
         return "min"
 
 def trouveLettre(carac, decalage, casse="min") :
+	""" Trouve le caractere demande avec le decalage demande et la casse eventuelle
+		dans l'alphabet et le retourne""" # Ameliorable je pense
 
     # ALPHABET ##############################
     liste = []
@@ -80,9 +82,10 @@ def trouveLettre(carac, decalage, casse="min") :
         return neo_carac.lower()
 
 def epureServeur(chaine, suppr) :
+	""" Supprime la chaine 'suppr' du début de la chaine 'chaine' 
+		Retourne la chaine """
     enleve = suppr
     pure = chaine.lstrip(enleve)
-    #pure = pure.replace('\n','').replace('\r','')
 
     return pure
 
@@ -238,7 +241,6 @@ def runCrypteSeq():
 
     reponse = envoyerRecevoir("start")
     reponse = envoyerRecevoir(chaine)
-
 
     #Decryptage de la réponse
     texte = epureServeur(reponse, "Je savais que je pouvais te faire confiance, Alice ! Voici mon message en retour:\n")
