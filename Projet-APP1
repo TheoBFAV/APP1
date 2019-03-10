@@ -432,12 +432,10 @@ def runPlanB():
 
     reponse = envoyerRecevoir(traduitLigne("hasta la revolucion", decalage))
 
-    texte = epureServeur(reponse, "Bonne réponse !")
-
-    decalage = caesar(texte)
+    decalage=-ord(list(reponse)[17])+ord("C")
 
     print(traduitLigne(reponse, decalage))
-
+    
     reponse = envoyerRecevoir(traduitLigne("hasta la victoria siempre", decalage))
 
     
